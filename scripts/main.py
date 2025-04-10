@@ -1,47 +1,5 @@
-import csv
-import os
 from datetime import datetime
-
-
-class DataManagerBase:
-    def __init__(self, date, start_time, lunch_start, lunch_end, end_time):
-        self.name = "Andréia"
-        self.date = date
-        self.start_time = start_time
-        self.lunch_start = lunch_start
-        self.lunch_end = lunch_end
-        self.end_time = end_time
-        self.hours_worked = 0
-
-    def get_hour_system(self):
-        return datetime.now().strftime("%H:%M:%S")
-
-
-class FileDataManager(DataManagerBase):
-    def __init__(self, date):
-        super().__init__(date, "", "", "", "")
-
-    def create_csv(self):
-        # verifica se o arquivo já existe
-        file_exists = os.path.exists("data.csv")
-
-        collums = [
-            "Nome", "Data", "Hora inicio", "Hora descanso",
-            "Hora retorno descanso", "Hora fim", "Horas trabalhadas"]
-
-        lines = [self.name, self.date, self.start_time,
-                 self.lunch_start, self.lunch_end, self.end_time,
-                 self.hours_worked]
-
-        with open("data.csv", "a", newline="", encoding="utf-8") as data_csv:
-            writer = csv.writer(data_csv, delimiter=",")
-            if not file_exists:
-                writer.writerow(collums)
-
-            writer.writerow(lines)
-
-    def calculate_hours(self):
-        pass
+from models.file_data_manager import FileDataManager
 
 
 if __name__ == '__main__':
