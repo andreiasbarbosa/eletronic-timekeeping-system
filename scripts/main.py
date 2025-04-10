@@ -1,11 +1,14 @@
-from datetime import datetime
 from models.file_data_manager import FileDataManager
+from models.time_keeping_entry import TimeKeepingEntry
+from models.utilities import Utilities
 
 
 if __name__ == '__main__':
     print('Olá Andréia!')
-    date_today = datetime.now().strftime("%Y-%m-%d")
-    new_day = FileDataManager(date_today)
+    user_name = "Andréia Barbosa"
+    date_today = Utilities.get_day_system()
+    file_data_manager = FileDataManager()
+    entry = TimeKeepingEntry(date_today, user_name)
     count_data = 0
 
     while count_data < 4:
@@ -18,32 +21,33 @@ if __name__ == '__main__':
         )
 
         if user_input == "1":
-            new_day.start_time = new_day.get_hour_system()
+            entry.start_time = Utilities.get_hour_system()
             print(
                 f"Operação registrada com sucesso!"
-                f"Você registrou às {new_day.start_time}.\n"
+                f"Você registrou às {entry.start_time}.\n"
             )
 
         elif user_input == "2":
-            new_day.lunch_start = new_day.get_hour_system()
+            entry.lunch_start = Utilities.get_hour_system()
             print(
                 f"Operação registrada com sucesso!"
-                f"Você registrou às {new_day.lunch_start}.\n"
+                f"Você registrou às {entry.lunch_start}.\n"
             )
 
         elif user_input == "3":
-            new_day.lunch_end = new_day.get_hour_system()
+            entry.lunch_end = Utilities.get_hour_system()
             print(
                 f"Operação registrada com sucesso!"
-                f"Você registrou às {new_day.lunch_end}.\n"
+                f"Você registrou às {entry.lunch_end}.\n"
             )
 
         else:
-            new_day.end_time = new_day.get_hour_system()
+            entry.end_time = Utilities.get_hour_system()
             print(
                 f"Operação registrada com sucesso!"
-                f"Você registrou às {new_day.end_time}.\n"
+                f"Você registrou às {entry.end_time}.\n"
             )
         count_data += 1
 
-    new_day.create_csv()
+    file_data_manager.create_csv()
+    file_data_manager.save_entry(entry)
