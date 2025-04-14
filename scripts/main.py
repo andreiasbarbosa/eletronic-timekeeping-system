@@ -49,5 +49,12 @@ if __name__ == '__main__':
             )
         count_data += 1
 
+    entry.hours_worked = Utilities.calculate_hours(
+        entry.start_time,
+        entry.lunch_start,
+        entry.lunch_end,
+        entry.end_time
+        )
+
     file_data_manager.create_csv()
     file_data_manager.save_entry(entry)

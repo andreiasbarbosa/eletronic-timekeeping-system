@@ -1,2 +1,8 @@
 Escopo exercicio.txt
 ajustes_parte_1.txt
+test_calculo.py
+# Ignorar pastas de cache do pytest
+pytest_cache/
+
+# Ignorar pastas de cache do Python
+__pycache__/
