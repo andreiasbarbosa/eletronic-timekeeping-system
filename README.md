@@ -16,8 +16,8 @@ Além disso, serve como portfólio para apresentar meus conhecimentos na modelag
 | Etapa | Descrição | Status |
 |-------|-----------|--------|
 | Parte 1 | Sistema funcional com persistência de dados em `.csv` | ✅ Concluido |
-| Parte 2 | Migração dos dados `.csv` para banco de dados local SQL | ⏳ Em andamento |
-| Parte 3 | Substituir uso de arquivo `.csv` por Banco de Dados | 🔜 Próximo passo |
+| Parte 2 | Migração dos dados `.csv` para banco de dados local SQL | ✅ Concluido |
+| Parte 3 | Substituir uso de arquivo `.csv` por Banco de Dados | ⏳ Em andamento |
 | Parte 4 | Envio de e-mails como comprovante das horas trabalhadas | 🔜 Planejado |
 | Parte 5 | Criação de um dashboard com visualização de dados da jornada de trabalho | 🔜 Planejado |
 
@@ -28,6 +28,6 @@ Além disso, serve como portfólio para apresentar meus conhecimentos na modelag
 - Python
 - Manipulação de arquivos `.csv`
 - Orientação a Objetos
-- SQL (Planejado)
+- SQL
 - SMTP (Simple Mail Transfer Protocol) em Python (Planejado)
 - Visualização de dados (Planejado)
